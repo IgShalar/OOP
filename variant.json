@@ -1,0 +1,15 @@
+{
+  "variant": 23,
+  "figures": [
+    "Hexagon",
+    "Octagon",
+    "Triangle"
+  ],
+  "containers": [
+    "TNaryTree",
+    "TQueue"
+  ],
+  "finished_labs": {
+    "lab1": "lab1"
+  }
+}
