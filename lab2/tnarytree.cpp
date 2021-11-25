@@ -106,18 +106,18 @@ void TNaryTree::Update(Hexagon &h, std::string &tree_path){
     }
 }
 
-void TNaryTree::node_delete(node * now, TNaryTree &t){
+void TNaryTree::node_delete(node * now, TNaryTree &t, node * rt){
     if (now==NULL) return;
     t.decrease();
-    node_delete(now->cld, t);
-    node_delete(now->brt, t);
+    node_delete(now->cld, t, rt);
+    if (rt != now) node_delete(now->brt, t, rt);
     delete (now);
 }
 
 // Удаление поддерева
 void TNaryTree::Clear(std::string &tree_path){
     if (tree_path == ""){
-        node_delete(root, * this);
+        node_delete(root, * this, root);
         root = NULL;
         return;
     }
@@ -139,16 +139,18 @@ void TNaryTree::Clear(std::string &tree_path){
             throw invalid_argument("Invalid tree_path.");
             exit(-1);
         }
-        node_delete (now->cld, * this);
-        now->cld = NULL;
+        node * ptr = now->cld;
+        now->cld = now->cld->brt;
+        node_delete (ptr, * this, ptr);
     }
     else{
         if (now->brt == NULL){
             throw invalid_argument("Invalid tree_path.");
             exit(-1);
         }
-        node_delete (now->brt, * this);
-        now->brt = NULL;
+        node * ptr = now->brt;
+        now->brt = now->brt->brt;
+        node_delete (ptr, * this, ptr);
     }
 }
 

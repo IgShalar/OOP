@@ -54,7 +54,7 @@ private:
     int get_size();
     void check();
     void decrease();
-    void node_delete(node *, TNaryTree &);
+    void node_delete(node *, TNaryTree &, node * rt);
 };
 
 #endif
