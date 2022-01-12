@@ -1,0 +1,13 @@
+input:
+-1 1 -1 1
+
+output:
+A = <-1, 1>
+B = <-1, 1>
+Comparison by x: 1
+(A == B) = 1
+A + B = <-2, 0>
+A - B = <0, 2>
+A * B = <1, 0>
+libc++abi.dylib: terminating with uncaught exception of type std::invalid_argument: right.x must be > 0
+Abort trap: 6
