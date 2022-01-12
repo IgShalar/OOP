@@ -12,7 +12,7 @@ using namespace std;
 
 template <typename T>
 struct myallocator {
-    const int num = 2;
+    const int num = 10;
     TQueue <T *> Free, Occupied;
     void add_space(){
         T * t = (T *) malloc (sizeof(T) * num);
