@@ -10,7 +10,14 @@
         "TQueue"
     ],
     "reports":[
-        
+        "lab1",
+        "lab2",
+        "lab3",
+        "lab4",
+        "lab5",
+        "lab6",
+        "lab0.1",
+        "lab0.2"
     ],
     "finished_labs":{
         "lab1":"lab1",
