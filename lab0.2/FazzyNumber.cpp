@@ -14,7 +14,7 @@ istream &operator >> (istream &is, FazzyNumber &h){
     return is;
 }
 
-ostream &operator << (ostream &os, FazzyNumber &h){
+ostream &operator << (ostream &os, const FazzyNumber &h){
     os << "<" << h.x << ", " << h.e << ">";
     return os;
 }
