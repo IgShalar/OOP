@@ -9,7 +9,7 @@ public:
     FazzyNumber() {this->x = 0, this->e = 0; };
     FazzyNumber(double a, double b);
     friend std::istream &operator >> (std::istream &is, FazzyNumber &p);
-    friend std::ostream &operator << (std::ostream &os, FazzyNumber &p);
+    friend std::ostream &operator << (std::ostream &os, const FazzyNumber &p);
     FazzyNumber &operator = (const FazzyNumber &right);
     bool operator == (const FazzyNumber &t);
     FazzyNumber operator + (const FazzyNumber &t);
